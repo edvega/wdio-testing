@@ -161,6 +161,13 @@ exports.config = {
      */
      before: function (capabilities, specs) {
         require('@babel/register');
+        
+        browser.addCommand('getMetadata', function() {
+            return {
+                url: this.getUrl(),
+                title: this.getTitle()
+            }
+        });
      },
     /**
      * Runs before a WebdriverIO command gets executed.
