@@ -1,4 +1,5 @@
 import { expect } from "chai";
+import * as dataHelper from "../lib/data-helpers";
 
 describe("Login test", () => {
 
@@ -22,7 +23,7 @@ describe("Login test", () => {
         const loginForm = $("#login_form");
 
         loginForm.waitForExist(5000);
-        browser.waitAndTypeText("#user_login", "random name");
+        browser.waitAndTypeText("#user_login", dataHelper.getRandomName());
         browser.waitAndTypeText("#user_password", "random password");
         browser.waitAndClick(".btn-primary");
     });

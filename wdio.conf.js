@@ -176,7 +176,7 @@ exports.config = {
                 $(selector).waitForExist();
                 $(selector).click();
             } catch (error) {
-                throw new Error("Could not click on selector: ${selector}");
+                throw new Error(`Could not click on selector: ${selector}`);
             }
         });
 
@@ -185,7 +185,7 @@ exports.config = {
                 $(selector).waitForExist();
                 $(selector).setValue(text);
             } catch (error) {
-                throw new Error("Could not type text into selector ${selector}");
+                throw new Error(`Could not type text into selector ${selector}`);
             }
         });
      },
