@@ -44,4 +44,14 @@ describe("WebdriverIO basics", () => {
         searchBox.clearValue();
         searchBox.setValue("your value");
     });
+
+    it("Checking the selector state", () => {
+        const url = "http://zero.webappsecurity.com/";
+        browser.url(url);
+
+        const signInBtn = $("#signin_button");
+        expect(signInBtn.isExisting()).to.be.true;
+        //expect(signInBtn.isSelected()).to.be.true;
+        //expect(signInBtn.isDisplayed()).to.be.true;
+    });
 });
