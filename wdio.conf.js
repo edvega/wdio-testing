@@ -179,6 +179,15 @@ exports.config = {
                 throw new Error("Could not click on selector: ${selector}");
             }
         });
+
+        browser.addCommand("waitAndTypeText", function(selector, text) {
+            try {
+                $(selector).waitForExist();
+                $(selector).setValue(text);
+            } catch (error) {
+                throw new Error("Could not type text into selector ${selector}");
+            }
+        });
      },
     /**
      * Runs before a WebdriverIO command gets executed.

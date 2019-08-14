@@ -26,10 +26,7 @@ describe("Forgotten Password Test", () => {
     });
 
     it("Should request new password", () => {
-        const emailInput = $("#user_email");
-
-        emailInput.waitForExist(5000);
-        emailInput.setValue("mail@mail.com");
+        browser.waitAndTypeText("#user_email", "mail@mail.com");
         browser.waitAndClick(".btn-primary");
     });
 });

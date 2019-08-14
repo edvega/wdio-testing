@@ -18,11 +18,10 @@ describe("Submit feedback Form Test", () => {
     });
 
     it("Should submit feedback form", () => {
-        $("form").waitForExist(5000);
-        $("#name").setValue("Some name");
-        $("#email").setValue("mail@mail.com");
-        $("#subject").setValue("Testing");
-        $("#comment").setValue("Some comments");
+        browser.waitAndTypeText("#name", "Some name");
+        browser.waitAndTypeText("#email", "Some email");
+        browser.waitAndTypeText("#subject", "Testing");
+        browser.waitAndTypeText("#comment", "Some comments");
         browser.waitAndClick(".btn-primary");
     });
 

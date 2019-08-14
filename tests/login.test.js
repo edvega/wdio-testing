@@ -20,17 +20,16 @@ describe("Login test", () => {
 
     it("Should submit login form", () => {
         const loginForm = $("#login_form");
-        const userName = $("#user_login");
-        const password = $("#user_password");
 
         loginForm.waitForExist(5000);
-        userName.setValue("random name");
-        password.setValue("random password");
+        browser.waitAndTypeText("#user_login", "random name");
+        browser.waitAndTypeText("#user_password", "random password");
         browser.waitAndClick(".btn-primary");
     });
 
     it("Should show error message", () => {
         const errorMessage = $(".alert-error");
-        expect(errorMessage.getText()).to.contains("Login and/or password are wrong");
+        expect(errorMessage.getText()).to.contains(
+            "Login and/or password are wrong");
     });
 });
